@@ -10,9 +10,7 @@ services:
     #command: yarn
     volumes:
       - hadoop-vol:/tmp
-      - ../:/home/hadoop/hadoop-example:rw
-    depends_on:
-      - java-dev
+      - .:/home/hadoop/hadoop-example:rw
 
 volumes:
   hadoop-vol: {}

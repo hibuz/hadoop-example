@@ -13,6 +13,7 @@ services:
     volumes:
       - hadoop-vol:/tmp
       - .:/home/hadoop/hadoop-example:rw
+    working_dir: /home/hadoop/hadoop-example
 
 volumes:
   hadoop-vol: {}

@@ -1,0 +1,24 @@
+# docker compose build hadoop-base
+# docker compose up
+# docker exec -it hadoop bash
+version: "3.9"
+services:
+
+  java-dev:
+    image: docker/dev-environments-java:stable-1
+
+  hadoop-dev:
+    container_name: hadoop
+    image: hibuz/hadoop-dev
+    ports:
+      - 9870:9870
+      - 9864:9864
+      - 8088:8088
+    #command: yarn
+    volumes:
+      - hadoop-vol:/tmp
+    depends_on:
+      - hadoop-base
+
+volumes:
+  hadoop-vol: {}
